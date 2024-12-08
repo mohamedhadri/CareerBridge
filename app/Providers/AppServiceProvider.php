@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Gate;
+use App\Models\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Model::unguard();
+        Model::unguard();  
+    }
+
+    /**
+     * Register the application's policies.
+     */
+    protected function registerPolicies(): void
+    {
+        // Register your policies here
     }
 }
